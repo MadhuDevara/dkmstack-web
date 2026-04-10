@@ -5,7 +5,7 @@ import { Services } from "@/components/services";
 
 export default function ServicesPage() {
   return (
-    <main>
+    <main className="app-shell">
       <Navbar />
       <AnimatedSection>
         <Services />

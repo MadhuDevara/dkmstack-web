@@ -5,7 +5,7 @@ import { Navbar } from "@/components/navbar";
 
 export default function ContactPage() {
   return (
-    <main>
+    <main className="app-shell">
       <Navbar />
       <AnimatedSection>
         <Contact />

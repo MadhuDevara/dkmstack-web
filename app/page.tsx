@@ -9,7 +9,7 @@ import { WhyChooseUs } from "@/components/why-choose-us";
 
 export default function Home() {
   return (
-    <main>
+    <main className="app-shell">
       <Navbar />
       <AnimatedSection>
         <Hero />

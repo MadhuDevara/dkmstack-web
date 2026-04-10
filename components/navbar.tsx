@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import { BrandLogo } from "@/components/brand-logo";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -69,22 +70,21 @@ export function Navbar() {
   }, [isOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#090B10]/80 backdrop-blur-md">
-      <nav className="section-container flex items-center justify-between py-4">
-        <Link
-          href="/"
-          className={`text-lg font-semibold tracking-tight transition ${
-            pathname === "/" ? "text-accentBlue" : "text-white hover:text-accentBlue"
-          }`}
-        >
-          DKMStack
-        </Link>
-        <ul className="hidden items-center gap-7 text-sm text-slate-300 md:flex">
+    <header className="sticky top-0 z-50 border-b border-borderDark/70 bg-[#0B0F19]/60 backdrop-blur-2xl">
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-accentBlue/40 to-transparent" />
+      <nav className="nav-container flex items-center justify-between py-2.5">
+        <div className="hidden md:block">
+          <BrandLogo variant="line" />
+        </div>
+        <div className="md:hidden">
+          <BrandLogo variant="monogram" />
+        </div>
+        <ul className="hidden items-center gap-2 rounded-full border border-borderDark/80 bg-surfaceDark/70 p-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] md:flex">
           {navItems.map((item) => (
             <li key={item.href} className="relative">
               <Link
-                className={`transition hover:text-accentBlue ${
-                  pathname === item.href ? "font-semibold text-accentBlue" : ""
+                className={`nav-item-pill ${
+                  pathname === item.href ? "nav-item-pill-active" : "nav-glow"
                 }`}
                 href={item.href}
               >
@@ -93,7 +93,7 @@ export function Navbar() {
               {pathname === item.href ? (
                 <motion.span
                   layoutId="navbar-active-link"
-                  className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-accentBlue"
+                  className="absolute -bottom-1 left-3.5 right-3.5 h-0.5 rounded-full bg-gradient-to-r from-accentBlue via-accentPurple to-accentCyan"
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
                 />
               ) : null}
@@ -103,7 +103,7 @@ export function Navbar() {
         <button
           ref={toggleButtonRef}
           type="button"
-          className="rounded-md border border-white/20 p-2 text-slate-200 transition hover:border-accentBlue hover:text-accentBlue md:hidden"
+          className="rounded-full border border-borderDark bg-surfaceDark/70 p-2 text-slate-200 transition duration-300 hover:border-accentCyan/60 hover:text-accentCyan md:hidden"
           onClick={() => setIsOpen((prev) => !prev)}
           aria-label="Toggle navigation menu"
         >
@@ -120,14 +120,14 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="border-t border-white/10 bg-[#0E111A] md:hidden"
+            className="border-t border-borderDark bg-[#111827]/95 md:hidden"
           >
-            <ul className="section-container flex flex-col gap-2 py-4 text-sm text-slate-300">
+            <ul className="nav-container flex flex-col gap-1.5 py-3 text-sm text-slate-300">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <Link
-                    className={`block rounded-md px-2 py-2 transition hover:bg-white/5 hover:text-accentBlue focus:bg-white/5 focus:text-accentBlue focus:outline-none ${
-                      pathname === item.href ? "bg-white/5 font-semibold text-accentBlue" : ""
+                    className={`block rounded-xl px-3 py-2.5 transition duration-300 hover:bg-accentBlue/10 hover:text-accentCyan focus:bg-accentBlue/10 focus:text-accentCyan focus:outline-none ${
+                      pathname === item.href ? "bg-accentBlue/10 font-semibold text-accentCyan" : ""
                     }`}
                     href={item.href}
                     onClick={closeMenu}

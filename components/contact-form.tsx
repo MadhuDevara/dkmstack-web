@@ -97,11 +97,11 @@ export function ContactForm() {
   return (
     <>
       {successMessage ? (
-        <div className="fixed right-5 top-20 z-[60] rounded-lg border border-emerald-400/30 bg-[#0F2A1F]/90 px-4 py-3 text-sm text-emerald-200 shadow-soft">
+        <div className="fixed right-5 top-20 z-[60] rounded-xl border border-emerald-400/30 bg-[#0F2A1F]/90 px-4 py-3 text-sm text-emerald-200 shadow-soft">
           {successMessage}
         </div>
       ) : null}
-      <form onSubmit={handleSubmit} className="card space-y-4">
+      <form onSubmit={handleSubmit} className="card mx-auto max-w-3xl space-y-4 text-left">
         <input
           type="text"
           name="website"
@@ -120,7 +120,7 @@ export function ContactForm() {
               placeholder="Name"
               value={formData.name}
               onChange={(event) => setFormData((prev) => ({ ...prev, name: event.target.value }))}
-              className="w-full rounded-lg border border-white/15 bg-[#121722] px-4 py-3 text-sm text-white outline-none transition focus:border-accentBlue"
+              className="w-full rounded-xl border border-borderDark bg-[#0F172A] px-4 py-3 text-sm text-white outline-none transition duration-300 focus:border-accentBlue focus:shadow-[0_0_0_3px_rgba(59,130,246,0.18)]"
             />
             {errors.name ? <p className="text-xs text-rose-300">{errors.name}</p> : null}
           </div>
@@ -131,7 +131,7 @@ export function ContactForm() {
               placeholder="Email"
               value={formData.email}
               onChange={(event) => setFormData((prev) => ({ ...prev, email: event.target.value }))}
-              className="w-full rounded-lg border border-white/15 bg-[#121722] px-4 py-3 text-sm text-white outline-none transition focus:border-accentBlue"
+              className="w-full rounded-xl border border-borderDark bg-[#0F172A] px-4 py-3 text-sm text-white outline-none transition duration-300 focus:border-accentBlue focus:shadow-[0_0_0_3px_rgba(59,130,246,0.18)]"
             />
             {errors.email ? <p className="text-xs text-rose-300">{errors.email}</p> : null}
           </div>
@@ -142,13 +142,13 @@ export function ContactForm() {
           placeholder="Message"
           value={formData.message}
           onChange={(event) => setFormData((prev) => ({ ...prev, message: event.target.value }))}
-          className="w-full rounded-lg border border-white/15 bg-[#121722] px-4 py-3 text-sm text-white outline-none transition focus:border-accentBlue"
+          className="w-full rounded-xl border border-borderDark bg-[#0F172A] px-4 py-3 text-sm text-white outline-none transition duration-300 focus:border-accentBlue focus:shadow-[0_0_0_3px_rgba(59,130,246,0.18)]"
         />
         {errors.message ? <p className="text-xs text-rose-300">{errors.message}</p> : null}
         <button
           type="submit"
           disabled={isSubmitting}
-          className="rounded-lg bg-accentBlue px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-500"
+          className="btn-primary disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isSubmitting ? "Sending..." : "Send Message"}
         </button>

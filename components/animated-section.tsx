@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
+import { useReducedMotion } from "framer-motion";
 
 type AnimatedSectionProps = {
   children: ReactNode;
@@ -9,12 +10,16 @@ type AnimatedSectionProps = {
 };
 
 export function AnimatedSection({ children, delay = 0 }: AnimatedSectionProps) {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 28, filter: "blur(6px)" }}
       viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.55, ease: "easeOut", delay }}
+      transition={
+        prefersReducedMotion ? { duration: 0.18, ease: "linear", delay: 0 } : { duration: 0.7, ease: [0.16, 1, 0.3, 1], delay }
+      }
+      whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0, filter: "blur(0px)" }}
     >
       {children}
     </motion.div>

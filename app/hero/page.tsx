@@ -1,14 +1,14 @@
 import { AnimatedSection } from "@/components/animated-section";
 import { Footer } from "@/components/footer";
+import { Hero } from "@/components/hero";
 import { Navbar } from "@/components/navbar";
-import { WhyChooseUs } from "@/components/why-choose-us";
 
-export default function WhyUsPage() {
+export default function HeroPage() {
   return (
     <main className="app-shell">
       <Navbar />
       <AnimatedSection>
-        <WhyChooseUs />
+        <Hero />
       </AnimatedSection>
       <Footer />
     </main>

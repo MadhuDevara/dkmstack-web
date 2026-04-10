@@ -25,13 +25,16 @@ export function Services() {
   return (
     <section id="services" className="section-container">
       <div className="space-y-10">
-        <h2 className="text-3xl font-semibold text-white">Services</h2>
+        <h2 className="section-title text-center">Services</h2>
         <div className="grid gap-6 md:grid-cols-3">
           {services.map((service) => {
             const Icon = service.icon;
             return (
-              <article key={service.title} className="card hover:border-accentBlue/40 hover:bg-white/10">
-                <Icon className="mb-4 h-7 w-7 text-accentBlue" />
+              <article
+                key={service.title}
+                className="card card-glow-hover group hover:border-accentPurple/50"
+              >
+                <Icon className="mb-4 h-7 w-7 text-accentCyan transition duration-300 group-hover:text-accentBlue" />
                 <h3 className="text-lg font-semibold text-white">{service.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-slate-300">{service.description}</p>
               </article>
