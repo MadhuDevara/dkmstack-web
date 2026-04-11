@@ -70,16 +70,16 @@ export function Navbar() {
   }, [isOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-borderDark/70 bg-[#0B0F19]/60 backdrop-blur-2xl">
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-accentBlue/40 to-transparent" />
-      <nav className="nav-container flex items-center justify-between py-2.5">
-        <div className="hidden md:block">
+    <header className="nav-luxe-header sticky top-0 z-50">
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <nav className="nav-container flex items-center justify-between gap-3 py-2.5 sm:py-3">
+        <div className="hidden min-w-0 md:block">
           <BrandLogo variant="line" />
         </div>
-        <div className="md:hidden">
-          <BrandLogo variant="monogram" />
+        <div className="min-w-0 flex-1 md:hidden">
+          <BrandLogo compact variant="full" />
         </div>
-        <ul className="hidden items-center gap-2 rounded-full border border-borderDark/80 bg-surfaceDark/70 p-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] md:flex">
+        <ul className="hidden items-center gap-1 rounded-full border border-white/[0.08] bg-slate-900/50 p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_4px_24px_rgba(0,0,0,0.2)] backdrop-blur-md md:ml-auto md:flex">
           {navItems.map((item) => (
             <li key={item.href} className="relative">
               <Link
@@ -103,7 +103,7 @@ export function Navbar() {
         <button
           ref={toggleButtonRef}
           type="button"
-          className="rounded-full border border-borderDark bg-surfaceDark/70 p-2 text-slate-200 transition duration-300 hover:border-accentCyan/60 hover:text-accentCyan md:hidden"
+          className="shrink-0 rounded-full border border-white/10 bg-slate-900/60 p-2 text-slate-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition duration-300 hover:border-accentCyan/40 hover:text-accentCyan md:hidden"
           onClick={() => setIsOpen((prev) => !prev)}
           aria-label="Toggle navigation menu"
         >
@@ -120,14 +120,16 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="border-t border-borderDark bg-[#111827]/95 md:hidden"
+            className="border-t border-white/[0.06] bg-slate-900/95 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur-xl md:hidden"
           >
-            <ul className="nav-container flex flex-col gap-1.5 py-3 text-sm text-slate-300">
+            <ul className="nav-container flex flex-col gap-1 py-3 text-sm text-slate-300">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <Link
-                    className={`block rounded-xl px-3 py-2.5 transition duration-300 hover:bg-accentBlue/10 hover:text-accentCyan focus:bg-accentBlue/10 focus:text-accentCyan focus:outline-none ${
-                      pathname === item.href ? "bg-accentBlue/10 font-semibold text-accentCyan" : ""
+                    className={`block rounded-xl border border-transparent px-3 py-2.5 transition duration-300 hover:border-white/10 hover:bg-white/[0.04] hover:text-white focus:bg-white/[0.04] focus:text-accentCyan focus:outline-none ${
+                      pathname === item.href
+                        ? "border-accentBlue/20 bg-gradient-to-r from-accentBlue/15 to-accentPurple/10 font-semibold text-white"
+                        : ""
                     }`}
                     href={item.href}
                     onClick={closeMenu}

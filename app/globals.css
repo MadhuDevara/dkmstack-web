@@ -75,6 +75,33 @@ body::before {
   @apply border-accentBlue/30 bg-gradient-to-r from-accentBlue/20 to-accentPurple/20 text-white shadow-[0_0_0_1px_rgba(59,130,246,0.28),0_12px_30px_rgba(59,130,246,0.2)];
 }
 
+/* Luxury navbar shell */
+.nav-luxe-header {
+  @apply relative overflow-hidden border-b border-white/[0.06] shadow-[0_8px_40px_-12px_rgba(0,0,0,0.55)];
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, transparent 42%),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.04) 0%, transparent 50%, rgba(139, 92, 246, 0.04) 100%),
+    rgba(11, 15, 25, 0.72);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+.nav-luxe-header::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.35) 25%,
+    rgba(139, 92, 246, 0.3) 50%,
+    rgba(34, 211, 238, 0.25) 75%,
+    transparent
+  );
+  pointer-events: none;
+}
+
 .card-glow-hover {
   @apply transition duration-500 hover:scale-[1.03] hover:shadow-glowBlue;
 }

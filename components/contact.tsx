@@ -1,13 +1,38 @@
+import { ContactDirectCard } from "@/components/contact-direct-card";
 import { ContactForm } from "@/components/contact-form";
 
-export function Contact() {
+type ContactProps = {
+  /** Email + LinkedIn card — only used on the dedicated /contact page */
+  variant?: "page" | "section";
+};
+
+export function Contact({ variant = "section" }: ContactProps) {
+  const isFullContactPage = variant === "page";
+
   return (
     <section id="contact" className="section-container">
-      <div className="space-y-8 text-center">
-        <h2 className="section-title">Contact Us</h2>
-        <p className="section-subtitle mx-auto">
-          Tell us about your project goals and we will get back to you with a tailored plan.
-        </p>
+      <div className="mx-auto max-w-3xl space-y-12 text-center">
+        <div className="space-y-3">
+          <h2 className="section-title">Contact Us</h2>
+          <p className="section-subtitle mx-auto">
+            Tell us about your project goals and we will get back to you with a tailored plan.
+          </p>
+        </div>
+
+        {isFullContactPage ? (
+          <>
+            <ContactDirectCard />
+            <div className="relative">
+              <div className="absolute inset-x-0 top-0 flex items-center" aria-hidden>
+                <div className="w-full border-t border-borderDark/80" />
+              </div>
+              <p className="relative mx-auto inline-block bg-[#0B0F19] px-4 text-xs font-medium uppercase tracking-[0.12em] text-slate-500">
+                Or send a message
+              </p>
+            </div>
+          </>
+        ) : null}
+
         <ContactForm />
       </div>
     </section>

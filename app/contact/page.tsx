@@ -8,7 +8,7 @@ export default function ContactPage() {
     <main className="app-shell">
       <Navbar />
       <AnimatedSection>
-        <Contact />
+        <Contact variant="page" />
       </AnimatedSection>
       <Footer />
     </main>

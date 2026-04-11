@@ -13,8 +13,8 @@ export function AboutHero() {
             We Build Software That Scales
           </h1>
           <p className="max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
-            DKMStack partners with startups and enterprises to design, build, and evolve digital
-            products with strong architecture, clean engineering practices, and long-term quality.
+            DKMStack partners with startups and enterprises to design, build, and evolve digital products with
+            strong architecture, clean engineering practices, and long-term quality.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link href="/services" className="btn-primary">
