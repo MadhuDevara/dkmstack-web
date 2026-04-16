@@ -1,5 +1,7 @@
 import { BrandLogo } from "@/components/brand-logo";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+
+const EMAIL = "dkmstack@gmail.com";
 
 const socialLinks = [
   { label: "LinkedIn", href: "#", icon: Linkedin },
@@ -36,6 +38,13 @@ export function Footer() {
                       Founder & QA Engineer <span className="text-slate-600">·</span> UI/UX, Web & App
                       Developer
                     </p>
+                    <a
+                      href={`mailto:${EMAIL}`}
+                      className="mt-3 inline-flex items-center gap-2 rounded-xl border border-white/[0.06] bg-white/[0.03] px-3 py-1.5 text-[11px] font-medium tracking-wide text-slate-400 transition hover:border-accentCyan/35 hover:bg-accentCyan/[0.06] hover:text-accentCyan sm:text-xs"
+                    >
+                      <Mail className="h-3.5 w-3.5" aria-hidden />
+                      {EMAIL}
+                    </a>
                   </div>
                 </div>
               </div>

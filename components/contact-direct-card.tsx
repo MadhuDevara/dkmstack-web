@@ -1,7 +1,7 @@
 import { ArrowUpRight, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 
-const EMAIL = "hello@dkmstack.com";
+const EMAIL = "dkmstack@gmail.com";
 const LINKEDIN_HREF = "#";
 
 export function ContactDirectCard() {
