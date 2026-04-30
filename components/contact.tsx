@@ -1,7 +1,8 @@
 import { ContactDirectCard } from "@/components/contact-direct-card";
 import { ContactForm } from "@/components/contact-form";
 
-const EMAIL = "dkmstack@gmail.com";
+const EMAIL = "contact@dkmstack.com";
+const ALIAS_EMAILS = ["info@dkmstack.com", "contact@dkmstack.com", "support@dkmstack.com"];
 
 type ContactProps = {
   /** Email + LinkedIn card — only used on the dedicated /contact page */
@@ -25,6 +26,17 @@ export function Contact({ variant = "section" }: ContactProps) {
               {EMAIL}
             </a>
             .
+          </p>
+          <p className="text-xs text-slate-500">
+            Aliases:{" "}
+            {ALIAS_EMAILS.map((alias, index) => (
+              <span key={alias}>
+                <a href={`mailto:${alias}`} className="text-slate-400 transition hover:text-accentCyan">
+                  {alias}
+                </a>
+                {index < ALIAS_EMAILS.length - 1 ? ", " : ""}
+              </span>
+            ))}
           </p>
         </div>
 

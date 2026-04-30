@@ -1,7 +1,8 @@
 import { ArrowUpRight, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 
-const EMAIL = "dkmstack@gmail.com";
+const EMAIL = "contact@dkmstack.com";
+const ALIAS_EMAILS = ["info@dkmstack.com", "contact@dkmstack.com", "support@dkmstack.com"];
 const LINKEDIN_HREF = "#";
 
 export function ContactDirectCard() {
@@ -25,6 +26,9 @@ export function ContactDirectCard() {
           </h3>
           <p className="mt-2 max-w-md text-sm leading-relaxed text-slate-400">
             Use the channels below — we read every message and respond personally.
+          </p>
+          <p className="mt-2 max-w-md text-xs leading-relaxed text-slate-500">
+            Alias emails: {ALIAS_EMAILS.join(" | ")}
           </p>
 
           <div className="mt-8 space-y-2.5">

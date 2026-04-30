@@ -1,7 +1,7 @@
 import { BrandLogo } from "@/components/brand-logo";
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
-const EMAIL = "dkmstack@gmail.com";
+const EMAIL = "contact@dkmstack.com";
 
 const socialLinks = [
   { label: "LinkedIn", href: "#", icon: Linkedin },
