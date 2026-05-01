@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 58 58">
+  <defs>
+    <linearGradient id="boltBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#152036"/>
+      <stop offset="1" stop-color="#020408"/>
+    </linearGradient>
+  </defs>
+  <rect width="58" height="58" rx="12" fill="url(#boltBg)"/>
+  <rect x="0.65" y="0.65" width="56.7" height="56.7" rx="11.35" fill="none" stroke="#93c5fd" stroke-width="1.35" opacity="0.55"/>
+  <g transform="translate(29,29) scale(1.26) translate(-29,-29)">
+    <polygon points="34,4 14,32 26,32 24,54 44,26 32,26" fill="#ffffff"/>
+    <polygon points="40,8 28,26 34,26 32,38 44,22 38,22" fill="#ffffff" opacity="0.45"/>
+  </g>
+</svg>

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate:favicon": "node scripts/generate-favicon.cjs"
   },
   "dependencies": {
     "@upstash/ratelimit": "^2.0.8",

@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800", "900"] });
 
 export const metadata: Metadata = {
   title: "DKMStack | Building Scalable Software Solutions",
@@ -15,6 +15,10 @@ export const metadata: Metadata = {
     "mobile app development",
     "automation testing"
   ]
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0a0a0a"
 };
 
 export default function RootLayout({

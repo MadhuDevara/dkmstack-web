@@ -1,5 +1,6 @@
 import { BrandLogo } from "@/components/brand-logo";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { FooterFounderBlock } from "@/components/footer-founder-block";
+import { Github, Linkedin, Twitter } from "lucide-react";
 
 const EMAIL = "contact@dkmstack.com";
 
@@ -27,25 +28,7 @@ export function Footer() {
                     className="mt-1 w-px shrink-0 self-stretch min-h-[4.5rem] bg-gradient-to-b from-accentCyan/75 via-accentBlue/35 to-transparent"
                     aria-hidden
                   />
-                  <div className="min-w-0 flex-1">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accentCyan/85">
-                      Founded by
-                    </p>
-                    <p className="mt-2.5 bg-gradient-to-br from-white via-slate-100 to-slate-400 bg-clip-text text-xl font-semibold tracking-[-0.03em] text-transparent sm:text-2xl">
-                      Maddy
-                    </p>
-                    <p className="mt-2 max-w-md text-[11px] font-medium leading-relaxed tracking-wide text-slate-500 sm:text-xs">
-                      Founder & QA Engineer <span className="text-slate-600">·</span> UI/UX, Web & App
-                      Developer
-                    </p>
-                    <a
-                      href={`mailto:${EMAIL}`}
-                      className="mt-3 inline-flex items-center gap-2 rounded-xl border border-white/[0.06] bg-white/[0.03] px-3 py-1.5 text-[11px] font-medium tracking-wide text-slate-400 transition hover:border-accentCyan/35 hover:bg-accentCyan/[0.06] hover:text-accentCyan sm:text-xs"
-                    >
-                      <Mail className="h-3.5 w-3.5" aria-hidden />
-                      {EMAIL}
-                    </a>
-                  </div>
+                  <FooterFounderBlock email={EMAIL} />
                 </div>
               </div>
               <p className="text-xs tracking-wide text-slate-500 sm:text-sm">
