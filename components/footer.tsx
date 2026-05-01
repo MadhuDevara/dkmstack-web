@@ -13,9 +13,9 @@ const socialLinks = [
 export function Footer() {
   return (
     <footer className="border-t border-borderDark/80 bg-[#0B0F19]">
-      <div className="section-container py-8">
-        <div className="rounded-2xl border border-borderDark bg-surfaceDark/55 px-5 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] backdrop-blur-sm sm:px-6 sm:py-6">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
+      <div className="section-container py-7 sm:py-8">
+        <div className="rounded-2xl border border-borderDark bg-surfaceDark/55 px-4 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] backdrop-blur-sm sm:px-6 sm:py-6 xl:px-7">
+          <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between md:gap-8 xl:gap-10">
             <div className="max-w-xl space-y-4">
               <BrandLogo compact variant="line" />
               <p className="text-sm leading-relaxed text-slate-400">
@@ -35,7 +35,7 @@ export function Footer() {
                 © 2026 DKMStack. All rights reserved.
               </p>
             </div>
-            <div className="flex flex-wrap gap-2.5">
+            <div className="flex flex-wrap gap-2.5 md:max-w-[45%] md:justify-end">
               {socialLinks.map((item) => {
                 const Icon = item.icon;
                 return (

@@ -72,14 +72,14 @@ export function Navbar() {
   return (
     <header className="nav-luxe-header sticky top-0 z-50">
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      <nav className="nav-container flex items-center justify-between gap-3 py-2.5 sm:py-3">
+      <nav className="nav-container flex items-center justify-between gap-3 py-2 sm:py-2.5">
         <div className="hidden min-w-0 md:block">
           <BrandLogo variant="line" />
         </div>
         <div className="min-w-0 flex-1 md:hidden">
           <BrandLogo compact variant="full" />
         </div>
-        <ul className="hidden items-center gap-1 rounded-full border border-white/[0.08] bg-slate-900/50 p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_4px_24px_rgba(0,0,0,0.2)] backdrop-blur-md md:ml-auto md:flex">
+        <ul className="hidden items-center gap-1 rounded-full border border-white/[0.08] bg-slate-900/50 p-0.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_4px_24px_rgba(0,0,0,0.2)] backdrop-blur-md md:ml-auto md:flex lg:p-1">
           {navItems.map((item) => (
             <li key={item.href} className="relative">
               <Link

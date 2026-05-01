@@ -10,9 +10,9 @@ const highlights = [
 export function WhyChooseUs() {
   return (
     <section id="why-us" className="section-container">
-      <div className="space-y-8">
+      <div className="space-y-7 sm:space-y-8">
         <h2 className="section-title text-center">Why Choose Us</h2>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-2">
           {highlights.map((item) => (
             <div
               key={item}

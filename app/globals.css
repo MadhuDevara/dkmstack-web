@@ -36,15 +36,15 @@ body::before {
 }
 
 .section-container {
-  @apply mx-auto w-full max-w-6xl px-6 py-12 sm:px-8 sm:py-14;
+  @apply mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-11;
 }
 
 .nav-container {
-  @apply mx-auto w-full max-w-6xl px-5 sm:px-7;
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
 }
 
 .card {
-  @apply rounded-2xl border border-borderDark bg-surfaceDark/90 p-6 shadow-soft backdrop-blur-sm transition duration-300;
+  @apply rounded-2xl border border-borderDark bg-surfaceDark/90 p-5 shadow-soft backdrop-blur-sm transition duration-300 sm:p-6;
 }
 
 .section-title {
@@ -68,7 +68,7 @@ body::before {
 }
 
 .nav-item-pill {
-  @apply rounded-full border border-transparent px-3.5 py-1.5 text-sm font-medium tracking-[0.01em] text-slate-300 transition duration-300 hover:border-accentCyan/25 hover:bg-white/5 hover:text-accentCyan;
+  @apply rounded-full border border-transparent px-3 py-1.5 text-sm font-medium tracking-[0.01em] text-slate-300 transition duration-300 hover:border-accentCyan/25 hover:bg-white/5 hover:text-accentCyan lg:px-3.5;
 }
 
 .nav-item-pill-active {

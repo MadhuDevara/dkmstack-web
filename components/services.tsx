@@ -24,9 +24,9 @@ const services = [
 export function Services() {
   return (
     <section id="services" className="section-container">
-      <div className="space-y-10">
+      <div className="space-y-8 sm:space-y-9">
         <h2 className="section-title text-center">Services</h2>
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-5 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
           {services.map((service) => {
             const Icon = service.icon;
             return (
@@ -35,7 +35,7 @@ export function Services() {
                 className="card card-glow-hover group hover:border-accentPurple/50"
               >
                 <Icon className="mb-4 h-7 w-7 text-accentCyan transition duration-300 group-hover:text-accentBlue" />
-                <h3 className="text-lg font-semibold text-white">{service.title}</h3>
+                <h3 className="text-lg font-semibold text-white sm:text-[1.15rem]">{service.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-slate-300">{service.description}</p>
               </article>
             );

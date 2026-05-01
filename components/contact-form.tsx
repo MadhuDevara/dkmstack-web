@@ -101,7 +101,7 @@ export function ContactForm() {
           {successMessage}
         </div>
       ) : null}
-      <form onSubmit={handleSubmit} className="card mx-auto max-w-3xl space-y-4 text-left">
+      <form onSubmit={handleSubmit} className="card mx-auto w-full max-w-3xl space-y-4 text-left">
         <input
           type="text"
           name="website"

@@ -14,8 +14,8 @@ export function Contact({ variant = "section" }: ContactProps) {
 
   return (
     <section id="contact" className="section-container">
-      <div className="mx-auto max-w-3xl space-y-12 text-center">
-        <div className="space-y-3">
+      <div className="mx-auto w-full max-w-3xl space-y-9 sm:space-y-10 text-center">
+        <div className="space-y-2.5 sm:space-y-3">
           <h2 className="section-title">Contact Us</h2>
           <p className="section-subtitle mx-auto">
             Tell us about your project goals and we will get back to you with a tailored plan.
@@ -27,11 +27,14 @@ export function Contact({ variant = "section" }: ContactProps) {
             </a>
             .
           </p>
-          <p className="text-xs text-slate-500">
+          <p className="mx-auto max-w-2xl text-xs leading-relaxed text-slate-500">
             Aliases:{" "}
             {ALIAS_EMAILS.map((alias, index) => (
               <span key={alias}>
-                <a href={`mailto:${alias}`} className="text-slate-400 transition hover:text-accentCyan">
+                <a
+                  href={`mailto:${alias}`}
+                  className="break-words text-slate-400 transition hover:text-accentCyan"
+                >
                   {alias}
                 </a>
                 {index < ALIAS_EMAILS.length - 1 ? ", " : ""}
