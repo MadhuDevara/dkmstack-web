@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { BrandLogo } from "@/components/brand-logo";
+import { ScrollProgressBar } from "@/components/scroll-progress-bar";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -70,9 +71,10 @@ export function Navbar() {
   }, [isOpen]);
 
   return (
-    <header className="nav-luxe-header sticky top-0 z-50">
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      <nav className="nav-container flex items-center justify-between gap-3 py-2 sm:py-2.5">
+    <header className="sticky top-0 z-50">
+      <ScrollProgressBar className="w-full" />
+      <div className="nav-luxe-header">
+        <nav className="nav-container flex items-center justify-between gap-3 py-2 sm:py-2.5">
         <div className="hidden min-w-0 md:block">
           <BrandLogo variant="line" />
         </div>
@@ -109,8 +111,8 @@ export function Navbar() {
         >
           {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
-      </nav>
-      <AnimatePresence>
+        </nav>
+        <AnimatePresence>
         {isOpen ? (
           <motion.div
             ref={menuRef}
@@ -141,7 +143,8 @@ export function Navbar() {
             </ul>
           </motion.div>
         ) : null}
-      </AnimatePresence>
+        </AnimatePresence>
+      </div>
     </header>
   );
 }

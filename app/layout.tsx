@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { BackToTopButton } from "@/components/back-to-top-button";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -28,7 +29,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <BackToTopButton />
+      </body>
     </html>
   );
 }
