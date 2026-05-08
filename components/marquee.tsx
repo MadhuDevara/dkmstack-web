@@ -36,11 +36,12 @@ function MarqueeRow({
               ✦
             </span>
           ) : null}
+          {/* Solid colors — bg-clip-text breaks under transformed ancestors (marquee track) in Safari / some prod builds */}
           <span
             className={
               i === 0
-                ? "bg-gradient-to-br from-accentCyan via-lux-frost to-lux-pearl bg-clip-text text-[13px] font-semibold uppercase leading-none tracking-[0.22em] text-transparent drop-shadow-[0_0_22px_rgba(34,211,238,0.22)] sm:text-[0.8125rem] sm:tracking-[0.26em]"
-                : "bg-gradient-to-b from-lux-ivory via-[#fefdfb] to-lux-pearl bg-clip-text text-[13px] font-medium uppercase leading-none tracking-[0.2em] text-transparent sm:text-[0.8125rem] sm:tracking-[0.24em]"
+                ? "text-[13px] font-semibold uppercase leading-none tracking-[0.22em] text-lux-frost drop-shadow-[0_0_18px_rgba(34,211,238,0.45)] sm:text-[0.8125rem] sm:tracking-[0.26em]"
+                : "text-[13px] font-medium uppercase leading-none tracking-[0.2em] text-[#f5efe6] sm:text-[0.8125rem] sm:tracking-[0.24em]"
             }
           >
             {part}
@@ -57,7 +58,7 @@ function MarqueeRow({
 export function Marquee({ className }: MarqueeProps) {
   return (
     <div
-      className={`marquee-dkm-root relative z-20 w-full overflow-hidden border-y border-[#d7b98a]/45 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(215,185,138,0.14),0_18px_52px_-18px_rgba(0,0,0,0.52)] backdrop-blur-md ${className ?? ""}`}
+      className={`marquee-dkm-root relative z-30 w-full overflow-hidden border-y border-[#d7b98a]/45 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(215,185,138,0.14),0_18px_52px_-18px_rgba(0,0,0,0.52)] backdrop-blur-md ${className ?? ""}`}
       aria-label={MARQUEE_ARIA_LABEL}
       role="region"
     >
